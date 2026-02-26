@@ -90,6 +90,9 @@ p {
 .prose p {
 	margin-bottom: 2em;
 }
+ul li {
+	list-style: none;
+}
 textarea {
 	width: 100%;
 	font-size: 16px;
