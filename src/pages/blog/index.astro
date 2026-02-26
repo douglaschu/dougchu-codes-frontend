@@ -1,7 +1,8 @@
 ---
 import { getPosts } from "../../lib/payload";
 import Layout from "../../layouts/BlogPost.astro";
-
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
 const posts = await getPosts();
 ---
 
@@ -10,6 +11,7 @@ const posts = await getPosts();
           <title>Doug Chu Codes</title>
      </head>
      <body>
+          <Header />
           <h1>Blog</h1>
           <ul>
                {
@@ -18,11 +20,15 @@ const posts = await getPosts();
                               <a href={`/blog/${post.slug}`}>
                                    <h2>{post.title}</h2>
                               </a>
-							  <time>{new Date(post.publishedAt).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })}</time>
+                              <time>
+                                   {new Date(
+                                        post.publishedAt,
+                                   ).toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                   })}
+                              </time>
                               <p>Published: {post.publishedAt}</p>
                          </li>
                     ))
