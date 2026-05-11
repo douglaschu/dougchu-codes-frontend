@@ -1,19 +1,21 @@
 ---
-import { getPost, getPosts } from "../../lib/payload";
+import { getCollection, render } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
 import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
 export async function getStaticPaths() {
-     const posts = await getPosts();
-     return posts.map((post: any) => ({
-          params: { slug: post.slug },
+     const posts = await getCollection("blog");
+     return posts.map((post) => ({
+          params: { slug: post.id },
+          props: { post },
      }));
 }
 
-const { slug } = Astro.params;
-const post = await getPost(slug!);
+const { post } = Astro.props;
+const { Content } = await render(post);
 
 if (!post) {
      return Astro.redirect("/404");
@@ -28,18 +30,17 @@ if (!post) {
 <body>
      <Header />
      <article>
-          <h1>{post.title}</h1>
+          <h1>{post.data.title}</h1>
           <time
                >{
-                    new Date(post.publishedAt).toLocaleDateString("en-US", {
+                    post.data.pubDate.toLocaleDateString("en-US", {
                          year: "numeric",
                          month: "long",
                          day: "numeric",
                     })
                }</time
           >
-          <!-- <div set:html={post.contentHTML} /> -->
-          <div set:html={post.contentHTML} />
+          <Content />
      </article>
      <a href="/blog">← Back to blog</a>
      <Footer />
