@@ -24,6 +24,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
                               <a href={`/blog/${post.id}`}>
                                    <h2>{post.data.title}</h2>
                               </a>
+                              <p class="description">{post.data.description}</p>
                               <time>
                                    {post.data.pubDate.toLocaleDateString(
                                         "en-US",
@@ -47,6 +48,12 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
           max-width: min(65ch, 100% - 2rem);
           padding: 0 2rem;
           margin: 2rem auto;
+     }
+
+     .description {
+          margin: 0.25rem 0 0.5rem;
+          color: rgb(var(--gray));
+          font-size: 0.9em;
      }
 
      li {

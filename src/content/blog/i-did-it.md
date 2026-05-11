@@ -1,6 +1,6 @@
 ---
 title: 'I Did It'
-description: 'Short summary'
+description: 'The thrilling saga of how I built the first iteration of my coding blog, and all the dragons, literal and metaphorical, I slew to get there.'
 pubDate: 2022-02-11T19:04:00-5:00
 heroImage: ../../assets/kota-ibushi-iwgp-victory.png
 ---

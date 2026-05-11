@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import constructionManGif from "../assets/old-under-construction-gif.gif";
+import { Image } from "astro:assets";
 ---
 
 <!doctype html>
@@ -15,12 +17,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           <h1>Portfolio</h1>
           <p>Gaze upon my works, ye mighty, and despair!</p>
           <img
-               src="src/assets/old-under-construction-gif.webp"
+               src="/images/old-under-construction-gif.gif"
                alt="web 1.0 under construction stick figure man gif"
           />
           <p>
-               <i
-                    >This page is currently under construction. Pardon our dust.</i>
+               <i>This page is currently under construction. Pardon our dust.</i
+               >
           </p>
      </main>
      <Footer />
