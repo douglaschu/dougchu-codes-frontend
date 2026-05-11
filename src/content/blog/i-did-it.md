@@ -43,4 +43,4 @@ It worked.
 
 It WORKED.
 
-One day, I'd like to write my own Jamstack build guide for this blog. Lord knows I had to work hard to get it running. I'm not ready to that yet, because, frankly, I need a break from Jamstack install guide minutiae. But nonetheless, I did it. I built my own blog.
+One day, I'd like to write my own Jamstack build guide for this blog. Lord knows I had to work hard to get it running. I'm not ready to do that yet, because, frankly, I need a break from Jamstack install guide minutiae. But nonetheless, I did it. I built my own blog.
