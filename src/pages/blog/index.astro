@@ -44,7 +44,16 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 
 <style>
      .posts {
-          padding: 5 rem;
-          margin: 1 rem;
+          max-width: min(65ch, 100% - 2rem);
+          padding: 0 2rem;
+          margin: 2rem auto;
+     }
+
+     li {
+          margin-bottom: 2rem;
+     }
+
+     li h2 {
+          margin-bottom: 0.25rem;
      }
 </style>

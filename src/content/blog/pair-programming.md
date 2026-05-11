@@ -5,7 +5,7 @@ pubDate: 2022-02-19T14:43:00-5:00
 heroImage: ../../assets/sb-hsr-lappy.png
 ---
 
-### I'm going to talk about one of the most surprising things I learned in software dev bootcamp: how I really like pair programming.
+#### I'm going to talk about one of the most surprising things I learned in software dev bootcamp: how I really like pair programming.
 
 Quick summary: pair programming is when you work together with a partner on code. The format I was taught went like this: one person codes for an hour, and the other person looks on at the screen to spot any errors. Or maybe to look up something while the person coding can continue to work uninterrupted. Like a backseat driver. When the hour is up, you switch. 
 
@@ -17,7 +17,7 @@ But to my surprise, when I tried pair programming in that evening’s class sess
 
  Here’s why I like pair programming:
 
-### It is very ADHD-friendly. 
+#### It is very ADHD-friendly. 
 
 I’ll probably write about this more in a future post, but I do have ADHD and that means I’m constantly thinking and evaluating everything I read and see and hear about productivity because, well, my brain just works differently and most productivity advice is written for the neurotypical brain. Which I don’t have. Pair programming combines the benefits of body doubling and working to time limits, both on their own popular and effective ADHD productivity strategies. 
 
@@ -25,7 +25,7 @@ Body doubling is simply having someone physically sit next to you when you work 
 
 Working to regular, periodic time limits is more common knowledge now thanks to the rise in popularity of the Pomodoro method. I’ve personally had mixed success with the Pomodoro technique. One reason is that alarms going off is not strong enough stimulus to stop and change over. If I get focused on something, I become extremely stubborn and somehow very good at ignoring any and all alarms. I often can’t resist continuing to work past the 25 minute mark and I don’t want to go back to work after the 5 minute break ends. An hour on and an hour off gives and affords more margin for my brain to disengage and switch tasks. All the stubbornness and uncooperativeness my brain has around sticking to a timer by itself, it’s like it suddenly vanishes when partnering with somebody. Combine this with body doubling and you have something very powerful.  
 
-## The hour-on, hour-off format lets you work for longer and get more done. 
+#### The hour-on, hour-off format lets you work for longer and get more done. 
 
 I tend to work in bursts. Most of my work in a day gets done in a 3-4 hour window when my brain gets rolling and I’m fully in the zone. But something about working for an hour and then looking on for an hour helps me stay charged and focused for much longer than I can on my own. For whatever reason, the hour periods where I’m playing backseat driver uses much less energy — or at least perhaps not the same energy source as when I’m coding. By the time my backseat driver hour is up, I’m ready to go.  
 
