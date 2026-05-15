@@ -48,6 +48,8 @@ Personal blog and portfolio site for `dougchu.codes` built with **Astro 5**. Blo
 | `src/layouts/BlogPost.astro`    | Shared layout for blog post pages                                                                              |
 | `src/components/HeaderLink.tsx` | React nav link component; accepts `active` prop                                                                |
 | `src/components/Header.astro`   | Site header; computes active link state, renders `HeaderLink`                                                  |
+| `src/components/PostCard.tsx`   | React blog post card; typed props (`title`, `pubDate: Date`, `description`, `url`); formats date internally    |
+| `src/components/PostCard.module.css` | Scoped styles for `PostCard` (CSS Module)                                                                 |
 | `src/consts.ts`                 | `SITE_TITLE`, `SITE_DESCRIPTION` — used in every `<BaseHead>`                                                  |
 | `astro.config.mjs`              | Integrations: `@astrojs/mdx`, `@astrojs/sitemap`, `@astrojs/react`; `site` URL needs updating from placeholder |
 | `src/lib/payload.ts`            | Dormant — being repurposed as the notes data layer for the planned microblog feature                           |

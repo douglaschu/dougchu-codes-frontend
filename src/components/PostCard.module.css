@@ -1,0 +1,13 @@
+.card {
+    margin-bottom: 2rem;
+}
+
+.card h2 {
+    margin-bottom: 0.25rem;
+}
+
+.description {
+    margin: 0.25rem 0 0 0.5rem;
+    color: rgb(var(--gray));
+    font-size: 0.9em;
+}
