@@ -5,25 +5,39 @@ import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import constructionManGif from "../assets/old-under-construction-gif.gif";
 import { Image } from "astro:assets";
+import { getAllProjects } from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
+
+const projects = getAllProjects();
 ---
 
 <!doctype html>
 <head>
-     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+     <BaseHead
+          title={`Portfolio | ${SITE_TITLE}`}
+          description={SITE_DESCRIPTION}
+     />
 </head>
 <body>
      <Header />
-     <main>
+     <main class="portfolio-main">
           <h1>Portfolio</h1>
-          <p>Gaze upon my works, ye mighty, and despair!</p>
-          <img
-               src="/images/old-under-construction-gif.gif"
-               alt="web 1.0 under construction stick figure man gif"
-          />
-          <p>
-               <i>This page is currently under construction. Pardon our dust.</i
-               >
-          </p>
+          <ul class="project-grid">
+               {projects.map((p) => <ProjectCard project={p} />)}
+          </ul>
      </main>
      <Footer />
 </body>
+
+<style>
+     .portfolio-main {
+          width: 90%;
+          max-width: 1100px;
+     }
+     .project-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          justify-items: center;
+          align-items: stretch;
+     }
+</style>
