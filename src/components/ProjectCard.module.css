@@ -1,20 +1,110 @@
 .card {
-    border: 1px solid red;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    border: 1px solid 	#006a65;
+    border-radius: 20% 8%;
     padding: 1em;
 }
 
-.projectCardTitle {}
+.card p {
+    font-family: "BerkeleyMono", "Atkinson", monospace, sans-serif;
+}
+
+.cardBody {
+    flex: 1;
+}
+
+.cardlowerThird {
+
+}
+
+.projectCardTitle {
+    color: #006a65
+}
+
+.description {
+    color: #472243
+}
 
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.25rem;
     padding: 0;
+    color: #fff;
+}
+
+.stackTag {
+    flex-basis: 100%;
+    text-align: center;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.techTag {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border-radius: 30px;
+    padding: 5px 15px;
+    margin: 1px;
+    color: white;
+}
+
+.techTag svg {
+    padding: 5px;
+}
+
+.techIcon {
+    width: 1rem;
+    height: 1rem;
 }
 
 .links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    padding: 0;
+    padding: 0.25rem;
 }
+
+.links li {
+    background-color: #4A4A4A;
+    border-radius: 30px;
+    padding: 5px 15px;
+}
+
+.links li[data-link="source"]  {
+    background-color: #08872b;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.linkIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.techTag[data-tech="angular"]    { background-color: #e10132;    color: #fff; }
+.techTag[data-tech="astro"]      { background-color: #BC52EE; color: #fff; }
+.techTag[data-tech="azure"]      { background-color: #104581; color: #fff; }
+.techTag[data-tech="razor"]     { background-color: #C9461E; color: #fff; }
+.techTag[data-tech="css"]        { background-color: #663399; color: #fff; }
+.techTag[data-tech="docker"]     { background-color: #1D63ED; color: #fff; }
+.techTag[data-tech="golang"]     { background-color: #007D9C; color: #fff; }
+.techTag[data-tech="github"]     { background-color: #08872b; color: #fff; }
+.techTag[data-tech="html5"]      { background-color: #E34F26; color: #fff; }
+.techTag[data-tech="mdx"] {background-color: #2596be; color: #fff}
+.techTag[data-tech="python"]     { background-color: #306998; color: #fff; }
+.techTag[data-tech="react"]      { background-color: #61DAFB; color: #000; }
+.techTag[data-tech="sql"]        { background-color: #00758F; color: #fff; }
+.techTag[data-tech="typescript"] { background-color: #3178C6; color: #fff; }
+.techTag[data-tech=".net"]       { background-color: #512BD4; color: #fff; }
