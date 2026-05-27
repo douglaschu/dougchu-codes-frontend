@@ -17,9 +17,6 @@ pnpm-debug.log*
 .env
 .env.production
 
-# assets folder
-src/assets/
-
 # macOS-specific files
 .DS_Store
 
