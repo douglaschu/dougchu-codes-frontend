@@ -1,0 +1,44 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0;
+    color: #fff;
+}
+
+.techTag {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border-radius: 30px;
+    padding: var(--tech-tag-padding, 5px 15px);
+    margin: var(--tech-tag-margin, 1px);
+    color: white;
+    font-size: var(--tech-tag-font-size, 0.75rem);
+}
+
+.techTag svg {
+    padding: 5px;
+}
+
+.techIcon {
+    width: var(--tech-tag-icon-size, 1rem);
+    height: var(--tech-tag-icon-size, 1rem);
+}
+
+.techTag[data-tech="angular"]    { background-color: #e10132;    color: #fff; }
+.techTag[data-tech="astro"]      { background-color: #BC52EE; color: #fff; }
+.techTag[data-tech="azure"]      { background-color: #104581; color: #fff; }
+.techTag[data-tech="razor"]     { background-color: #C9461E; color: #fff; }
+.techTag[data-tech="css"]        { background-color: #663399; color: #fff; }
+.techTag[data-tech="docker"]     { background-color: #1D63ED; color: #fff; }
+.techTag[data-tech="golang"]     { background-color: #007D9C; color: #fff; }
+.techTag[data-tech="github"]     { background-color: #08872b; color: #fff; }
+.techTag[data-tech="html5"]      { background-color: #E34F26; color: #fff; }
+.techTag[data-tech="mdx"] {background-color: #2596be; color: #fff}
+.techTag[data-tech="python"]     { background-color: #306998; color: #fff; }
+.techTag[data-tech="react"]      { background-color: #61DAFB; color: #000; }
+.techTag[data-tech="sql"]        { background-color: #00758F; color: #fff; }
+.techTag[data-tech="typescript"] { background-color: #3178C6; color: #fff; }
+.techTag[data-tech=".net"]       { background-color: #512BD4; color: #fff; }

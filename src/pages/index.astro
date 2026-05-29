@@ -3,9 +3,16 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { Image } from "astro:assets";
+import { projects } from "../data/projects";
+const featuredProject = projects.find((p) => p.featured)!;
+const { tech } = featuredProject;
+import TechTag from "../components/TechTag";
+import pfpHiSign from "../assets/pfp-hi-sign-2021.jpg";
+import acebotIcon from "../assets/portfolio/acebot01.png";
+import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
 ---
 
-<!doctype html>
 <html lang="en">
      <head>
           <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -13,14 +20,115 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
      <body>
           <Header />
           <main>
-               <h1>Hello</h1>
-               <p>
-                    Hi, I'm Doug Chu, and I'm a full stack developer based in
-                    Grand Rapids, Michigan. Behold, these are my musings (i.e.
-                    my coding blog) and my works (i.e. my portfolio.) Peruse at
-                    your own peril!
-               </p>
+               <img
+                    src={underConstruction.src}
+                    alt="da under construction bulldozer"
+               />
+               <div class="hero">
+                    <div class="hero-left">
+                         <h1>Hello!</h1>
+                         <h3>I'm Doug Chu, full-stack developer.</h3>
+                         <p>
+                              Behold, these are my musings (i.e. my coding blog)
+                              and my works (i.e. my portfolio.) Peruse at your
+                              own peril!
+                         </p>
+                    </div>
+                    <div class="hero-right">
+                         <div class="portrait">
+                              <Image
+                                   src={pfpHiSign}
+                                   alt="Me holding my cat Moses, holding up a sign that says Hi! on it."
+                              />
+                         </div>
+                    </div>
+               </div>
           </main>
+          <div class="featured-projects">
+               <div class="fp-title">
+                    <h1>Featured Projects</h1>
+               </div>
+               <div class="card">
+                    <div class="card-left">
+                         <p>Bluesky | Python | Typescript</p>
+                         <h2>Ace Attorney Bot: Bluesky Edition</h2>
+                         <h4>
+                              Social media conversation renderer for the
+                              butterfly app.
+                         </h4>
+                         <TechTag tech={tech} />
+                    </div>
+                    <div class="card-right">
+                         <div class="project-preview">
+                              <Image
+                                   src={acebotIcon}
+                                   alt="Bluesky Ace Attorney Bot Screenshot"
+                              />
+                              <!-- Idea: Embed a video of bot in action. If Astro happens to not support video, convert video to gif and embed. -->
+                         </div>
+                    </div>
+               </div>
+          </div>
           <Footer />
      </body>
 </html>
+
+<style>
+     .hero {
+          display: grid;
+          min-height: 70svh;
+          margin: 0 auto;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr auto;
+          grid-column-gap: 3em;
+     }
+
+     .hero-right {
+          display: grid;
+     }
+     .portrait {
+          justify-self: center;
+          align-self: center;
+          border-radius: 12px;
+          width: 90%;
+     }
+
+     .featured-projects {
+          display: grid;
+          justify-items: center;
+          padding: 1em;
+          background: linear-gradient(#006a65, #14d7cd, #006a65);
+     }
+
+     .fp-title {
+          color: #fff;
+     }
+
+     .card {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          background-color: #fff;
+          border-radius: 12px;
+          padding: 2em;
+          margin: 5%;
+          --tech-tag-font-size: 1.5rem;
+          --tech-tag-padding: 8px 20px;
+          --tech-tag-icon-size: 1.25rem;
+          --tech-tag-margin-size: 3em;
+     }
+
+     @media (max-width: 600px) {
+          .hero {
+               grid-template-columns: 1fr;
+               margin: 1em;
+          }
+
+          .portrait {
+               width: 70%;
+          }
+
+          .card {
+               grid-template-columns: 1fr;
+          }
+     }
+</style>

@@ -78,9 +78,10 @@ body {
 }
 main {
 	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
+	max-width: min(720px, 100% - 2rem);
 	padding: 3em 1em;
+	display: grid;
+	justify-self: center;
 }
 h1,
 h2,
