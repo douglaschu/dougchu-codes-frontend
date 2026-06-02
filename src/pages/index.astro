@@ -5,9 +5,10 @@ import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
 import { projects } from "../data/projects";
-const featuredProject = projects.find((p) => p.featured)!;
+const featuredProject = projects.find((p) => p.slug === "ace-court-bot-bsky")!;
 const { tech } = featuredProject;
 import TechTag from "../components/TechTag";
+import ProjectLinks from "../components/ProjectLinks";
 import pfpHiSign from "../assets/pfp-hi-sign-2021.jpg";
 import acebotIcon from "../assets/portfolio/acebot01.png";
 import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
@@ -29,9 +30,10 @@ import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
                          <h1>Hello!</h1>
                          <h3>I'm Doug Chu, full-stack developer.</h3>
                          <p>
-                              Behold, these are my musings (i.e. my coding blog)
-                              and my works (i.e. my portfolio.) Peruse at your
-                              own peril!
+                              When no tool to solve the problem exists, code
+                              your own. Building comprehensive software
+                              solutions to solve complex and idiosyncratic
+                              problems since 2020.
                          </p>
                     </div>
                     <div class="hero-right">
@@ -50,12 +52,11 @@ import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
                </div>
                <div class="card">
                     <div class="card-left">
-                         <p>Bluesky | Python | Typescript</p>
                          <h2>Ace Attorney Bot: Bluesky Edition</h2>
-                         <h4>
+                         <p>
                               Social media conversation renderer for the
                               butterfly app.
-                         </h4>
+                         </p>
                          <TechTag tech={tech} />
                     </div>
                     <div class="card-right">
@@ -65,6 +66,13 @@ import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
                                    alt="Bluesky Ace Attorney Bot Screenshot"
                               />
                               <!-- Idea: Embed a video of bot in action. If Astro happens to not support video, convert video to gif and embed. -->
+                         </div>
+                         <div class="project-links">
+                              <ProjectLinks
+                                   url={featuredProject.url}
+                                   repoUrl={featuredProject.repoUrl}
+                                   blogUrl={featuredProject.blogUrl}
+                              />
                          </div>
                     </div>
                </div>
@@ -89,15 +97,37 @@ import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
      .portrait {
           justify-self: center;
           align-self: center;
-          border-radius: 12px;
+          border-radius: 30px;
           width: 90%;
+          filter: drop-shadow(0 2.8px 2.2px rgb(0 0 0 / 0.034))
+               drop-shadow(0 6.7px 5.3px rgb(0 0 0 / 0.048))
+               drop-shadow(0 12.5px 10px rgb(0 0 0 / 0.06))
+               drop-shadow(0 22.3px 17.9px rgb(0 0 0 / 0.072))
+               drop-shadow(0 41.8px 33.4px rgb(0 0 0 / 0.086));
      }
 
      .featured-projects {
           display: grid;
           justify-items: center;
           padding: 1em;
-          background: linear-gradient(#006a65, #14d7cd, #006a65);
+          /* 
+          deep blue sky gradient
+          background: #2980b9; 
+          background: -webkit-linear-gradient(
+               to bottom,
+               #ffffff,
+               #6dd5fa,
+               #2980b9
+          ); 
+          background: radial-gradient(
+               circle farthest-side,
+               #ffffff,
+               #6dd5fa,
+               #2980b9
+          ); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+          /* mighty ducks teal basic gradient */
+          /* background: linear-gradient(#006a65, #14d7cd, #006a65); */
      }
 
      .fp-title {
@@ -108,13 +138,21 @@ import underConstruction from "../assets/gifs/Under-Construction-Bulldozer.gif";
           display: grid;
           grid-template-columns: 2fr 1fr;
           background-color: #fff;
-          border-radius: 12px;
+          border-radius: 30px;
           padding: 2em;
           margin: 5%;
           --tech-tag-font-size: 1.5rem;
           --tech-tag-padding: 8px 20px;
           --tech-tag-icon-size: 1.25rem;
           --tech-tag-margin-size: 3em;
+     }
+
+     .project-preview {
+          filter: drop-shadow(0 2.8px 2.2px rgb(0 0 0 / 0.034))
+               drop-shadow(0 6.7px 5.3px rgb(0 0 0 / 0.048))
+               drop-shadow(0 12.5px 10px rgb(0 0 0 / 0.06))
+               drop-shadow(0 22.3px 17.9px rgb(0 0 0 / 0.072))
+               drop-shadow(0 41.8px 33.4px rgb(0 0 0 / 0.086));
      }
 
      @media (max-width: 600px) {

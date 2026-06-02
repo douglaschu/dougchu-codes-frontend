@@ -1,9 +1,7 @@
 import styles from "./ProjectCard.module.css";
 import type { Project } from "../data/projects";
 import TechTag from "./TechTag";
-import WebIcon from "../assets/icons/world.svg?react";
-import GithubIcon from "../assets/icons/github.svg?react";
-
+import ProjectLinks from "./ProjectLinks";
 
 type Props = {
     project: Project;
@@ -26,29 +24,7 @@ export default function ProjectCard({project}: Props) {
             </div>
             <div className="cardFooter">
             <TechTag tech={tech} />
-            <ul className={styles.links}>                
-                {url && 
-                (<li data-link="live">
-                    <a className={styles.link} href={url}>
-                    <WebIcon className={styles.linkIcon}
-                     aria-hidden="true" />
-                    Live &#62;</a>
-                    </li>)}
-                {repoUrl && (
-                    <li data-link="source">
-                        <a className={styles.link} href={repoUrl}>
-                            <GithubIcon className={styles.linkIcon} aria-hidden="true" />
-                            Source &#62;
-                        </a>
-                        </li>)}
-                 {blogUrl && (
-        <li data-link="blog">
-            <a className={styles.link} href={blogUrl}>
-                Blog
-            </a>
-        </li>
-    )}
-            </ul>
+<ProjectLinks url={url} repoUrl={repoUrl} blogUrl={blogUrl} />
             </div>
         </li>
     )
